@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 949d51bbaf7690844b95bd871e199621
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8062772788582638038
+    second: Infected person #1 M_0
+  - first:
+      213: -7359740607586112458
+    second: Infected person #1 M_1
+  - first:
+      213: 8901109737068468944
+    second: Infected person #1 M_2
+  - first:
+      213: -9156309364718683991
+    second: Infected person #1 M_3
+  - first:
+      213: 1123889364241184755
+    second: Infected person #1 M_4
+  - first:
+      213: -839681153790500214
+    second: Infected person #1 M_5
+  - first:
+      213: 1798545915907698488
+    second: Infected person #1 M_6
+  - first:
+      213: 2542729105702627463
+    second: Infected person #1 M_7
+  - first:
+      213: -822618871982202208
+    second: Infected person #1 M_8
+  - first:
+      213: 5191432661657814497
+    second: Infected person #1 M_9
+  - first:
+      213: 1186545066112213170
+    second: Infected person #1 M_10
+  - first:
+      213: 8291910920163602776
+    second: Infected person #1 M_11
+  - first:
+      213: -2398932610105725657
+    second: Infected person #1 M_12
+  - first:
+      213: -8581344561944405961
+    second: Infected person #1 M_13
+  - first:
+      213: 3163306752962058017
+    second: Infected person #1 M_14
+  - first:
+      213: -245170868436144587
+    second: Infected person #1 M_15
+  - first:
+      213: -5314523479956448495
+    second: Infected person #1 M_16
+  - first:
+      213: 5943395149450972611
+    second: Infected person #1 M_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Infected person #1 M_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d167200229b4ef60800000000000000
+      internalID: 8062772788582638038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 199
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63cefc539e2fcd990800000000000000
+      internalID: -7359740607586112458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da9cb05528178b70800000000000000
+      internalID: 8901109737068468944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_3
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 199
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a83c5e15214ee080800000000000000
+      internalID: -9156309364718683991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f77f621c6bd89f00800000000000000
+      internalID: 1123889364241184755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 44
+        width: 59
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a822abf707ad854f0800000000000000
+      internalID: -839681153790500214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 187
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f68ed3bf7b5f810800000000000000
+      internalID: 1798545915907698488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_7
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 187
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788a37156a6994320800000000000000
+      internalID: 2542729105702627463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_8
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 181
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2e7fd8e787594f0800000000000000
+      internalID: -822618871982202208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_9
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 187
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e58979108cab0840800000000000000
+      internalID: 5191432661657814497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_10
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 181
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b06c977374777010800000000000000
+      internalID: 1186545066112213170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_11
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 187
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851b889ac09c21370800000000000000
+      internalID: 8291910920163602776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_12
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 181
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d2c8e408745bed0800000000000000
+      internalID: -2398932610105725657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_13
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 175
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 738d21a3690f8e880800000000000000
+      internalID: -8581344561944405961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 175
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127d5ed5bb256eb20800000000000000
+      internalID: 3163306752962058017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_15
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 169
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ee695e46af89cf0800000000000000
+      internalID: -245170868436144587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_16
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 175
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b19b27d050f36b0800000000000000
+      internalID: -5314523479956448495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person #1 M_17
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 169
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd0ec2266e2b7250800000000000000
+      internalID: 5943395149450972611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Infected person #1 M_0: 8062772788582638038
+      Infected person #1 M_1: -7359740607586112458
+      Infected person #1 M_10: 1186545066112213170
+      Infected person #1 M_11: 8291910920163602776
+      Infected person #1 M_12: -2398932610105725657
+      Infected person #1 M_13: -8581344561944405961
+      Infected person #1 M_14: 3163306752962058017
+      Infected person #1 M_15: -245170868436144587
+      Infected person #1 M_16: -5314523479956448495
+      Infected person #1 M_17: 5943395149450972611
+      Infected person #1 M_2: 8901109737068468944
+      Infected person #1 M_3: -9156309364718683991
+      Infected person #1 M_4: 1123889364241184755
+      Infected person #1 M_5: -839681153790500214
+      Infected person #1 M_6: 1798545915907698488
+      Infected person #1 M_7: 2542729105702627463
+      Infected person #1 M_8: -822618871982202208
+      Infected person #1 M_9: 5191432661657814497
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

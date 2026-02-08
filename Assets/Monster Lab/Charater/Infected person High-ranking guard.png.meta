@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: b4ed8fc25c9cc244186d5afdb44e4704
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1008135604471400707
+    second: Infected person High-ranking guard_0
+  - first:
+      213: 6756092064355611492
+    second: Infected person High-ranking guard_1
+  - first:
+      213: -7950086200920908268
+    second: Infected person High-ranking guard_2
+  - first:
+      213: -8804913155453441789
+    second: Infected person High-ranking guard_3
+  - first:
+      213: -7036568392723609254
+    second: Infected person High-ranking guard_4
+  - first:
+      213: 7550963683799583345
+    second: Infected person High-ranking guard_5
+  - first:
+      213: -1131977469556972796
+    second: Infected person High-ranking guard_6
+  - first:
+      213: -2582889383002716680
+    second: Infected person High-ranking guard_7
+  - first:
+      213: 3213169003906800472
+    second: Infected person High-ranking guard_8
+  - first:
+      213: -6283394641114511837
+    second: Infected person High-ranking guard_9
+  - first:
+      213: -4478657122269465087
+    second: Infected person High-ranking guard_10
+  - first:
+      213: 3957568705005329085
+    second: Infected person High-ranking guard_11
+  - first:
+      213: -1987091011249670031
+    second: Infected person High-ranking guard_12
+  - first:
+      213: -1169930768161122776
+    second: Infected person High-ranking guard_13
+  - first:
+      213: -8832105442901247282
+    second: Infected person High-ranking guard_14
+  - first:
+      213: 6813774583452613231
+    second: Infected person High-ranking guard_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 311
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30901fdadfd9dfd00800000000000000
+      internalID: 1008135604471400707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 305
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46370cdefe572cd50800000000000000
+      internalID: 6756092064355611492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 311
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41edf5cb8be9ba190800000000000000
+      internalID: -7950086200920908268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_3
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 305
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309a803b22aaec580800000000000000
+      internalID: -8804913155453441789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 94
+        width: 139
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59c7f10456195e90800000000000000
+      internalID: -7036568392723609254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 293
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17acfb4b6796ac860800000000000000
+      internalID: 7550963683799583345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 299
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403af492d786a40f0800000000000000
+      internalID: -1131977469556972796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 293
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f5cef77acbb72cd0800000000000000
+      internalID: -2582889383002716680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 299
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b19295f28779c20800000000000000
+      internalID: 3213169003906800472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_9
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 293
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 326c6c06dd5ecc8a0800000000000000
+      internalID: -6283394641114511837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_10
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 281
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 106fa54831d98d1c0800000000000000
+      internalID: -4478657122269465087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_11
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 287
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba9b04e4cb1ce630800000000000000
+      internalID: 3957568705005329085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_12
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 281
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178771ad04f6c64e0800000000000000
+      internalID: -1987091011249670031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_13
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 287
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826d4f73a2293cfe0800000000000000
+      internalID: -1169930768161122776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_14
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 281
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecab319e4ee0e6580800000000000000
+      internalID: -8832105442901247282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Infected person High-ranking guard_15
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 275
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a374af1e36f8e50800000000000000
+      internalID: 6813774583452613231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Infected person High-ranking guard_0: 1008135604471400707
+      Infected person High-ranking guard_1: 6756092064355611492
+      Infected person High-ranking guard_10: -4478657122269465087
+      Infected person High-ranking guard_11: 3957568705005329085
+      Infected person High-ranking guard_12: -1987091011249670031
+      Infected person High-ranking guard_13: -1169930768161122776
+      Infected person High-ranking guard_14: -8832105442901247282
+      Infected person High-ranking guard_15: 6813774583452613231
+      Infected person High-ranking guard_2: -7950086200920908268
+      Infected person High-ranking guard_3: -8804913155453441789
+      Infected person High-ranking guard_4: -7036568392723609254
+      Infected person High-ranking guard_5: 7550963683799583345
+      Infected person High-ranking guard_6: -1131977469556972796
+      Infected person High-ranking guard_7: -2582889383002716680
+      Infected person High-ranking guard_8: 3213169003906800472
+      Infected person High-ranking guard_9: -6283394641114511837
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
