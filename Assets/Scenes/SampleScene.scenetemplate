@@ -19,9 +19,17 @@ MonoBehaviour:
   dependencies:
   - dependency: {fileID: 5229167238545323361, guid: afedce671934e414c9ff7fa885e94392, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 061cc64d1f9109f4ba13b7d6d4af322d, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 536699689496513423, guid: eb5b9324b27170f4aab0fb618de25249, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 8141433268658492000, guid: cc967352cfc07bc4796143dfda1920a7, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 3485fcf3eca6a2a439f503ca4886ad44, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 05e09e97672c66f4abf57c8ddbb84554, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 6690177511500498414, guid: 7366ee7bc6768034b86768bf6b2e425a, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 11400000, guid: c9147ed856d910641bdbac0703cfee1a, type: 2}
     instantiationMode: 1
@@ -29,10 +37,20 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 5c64eaedbaac41a4ab909951cc701eaf, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 11400000, guid: 7f349ada80d702b4487d6c01655acb9d, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: c3caeaa5f1ca8a34fa8a2cfffb0a933c, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 1420131868288578698, guid: c6f65d820dd06d7458b5a8902da8bd37, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: b47135924c1e8944a9ab3e406cac1d07, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 8f132911f6363b54cbdbfe0116630b97, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 57da91ef0c2a5489891995dc81537253, type: 3}
     instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 1c3af44bd526bd04882b21bb5faf5c36, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 40265a896a0f341bb956e90c59025a29, type: 3}
     instantiationMode: 1
   - dependency: {fileID: -944628639613478452, guid: 20a6fa4d43b17fe478b29fde15d69235, type: 3}
