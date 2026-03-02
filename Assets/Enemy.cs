@@ -1,71 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int livePoint = 3;
-    public Transform player;
+    [Header("Detection Settings")]
+    public float detectionRange = 10f; // ระยะที่ศัตรูจะมองเห็นและเริ่มเดินมาหา
+    
+    [Header("Movement Settings")]
+    private Transform player;
     public float chaseSpeed = 2f;
-    public float jumpForce = 2f;
+    public float jumpForce = 5f;
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool shouldJump;
 
-    // Start is called before the first frame update
+    [Header("Health Settings")]
+    public int maxHealth = 3;
+    private int currentHealth;
+    private SpriteRenderer spriteRenderer;
+    private Color ogColor;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        // ตรวจสอบว่าในฉากมี Object ที่ใส่ Tag ว่า "Player"
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null) player = playerObj.transform;
+        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
+        ogColor = spriteRenderer.color;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Is Grounded?
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
+        if (player == null) return;
 
-        // Player Direction
-        float direction = Mathf.Sign(player.position.x - transform.position.x);
+        // 1. คำนวณระยะห่างระหว่าง ศัตรู กับ ผู้เล่น
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        // Player above detection
-        bool isPlayerAbove = Physics2D.Raycast(transform.position, Vector2.up, 3f, 1 << player.gameObject.layer);
-
-        if (isGrounded)
+        // 2. ถ้าผู้เล่นอยู่ในระยะที่กำหนด (detectionRange) ถึงจะเริ่มเดิน
+        if (distanceToPlayer <= detectionRange)
         {
-            // Chase player
+            isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
+            float direction = Mathf.Sign(player.position.x - transform.position.x);
+            
+            // สั่งให้เดินตาม
             rb.velocity = new Vector2(direction * chaseSpeed, rb.velocity.y);
 
-            // Jump if there's gap ahead && no ground infront
-            // else if there's player above and platform above
-
-            // If Ground
-            RaycastHit2D groundInFront = Physics2D.Raycast(transform.position, new Vector2(direction, 0), 2f, groundLayer);
-            // If gap
-            RaycastHit2D gapAhead = Physics2D.Raycast(transform.position + new Vector3(direction, 0, 0), Vector2.down, 2f, groundLayer);
-            // If platform above
-            RaycastHit2D platformAbove = Physics2D.Raycast(transform.position, Vector2.up, 3f, groundLayer);
-
-            if (!groundInFront.collider && !gapAhead.collider)
+            // ระบบ AI ตรวจสอบการกระโดด (กำแพง/ทางขาด) ตามรูปภาพที่คุณเคยส่งมา
+            RaycastHit2D groundInFront = Physics2D.Raycast(transform.position, new Vector2(direction, 0), 1.5f, groundLayer);
+            if (groundInFront.collider != null) 
             {
-                shouldJump = true;
-            }
-            else if (isPlayerAbove && platformAbove.collider)
-            {
-                shouldJump = true;
+                shouldJump = true; 
             }
         }
-    }
-
-    public void TakeDamage(int damage){
-
-        Debug.Log(damage);
-        
-
-        this.livePoint = this.livePoint - damage ;
-        Debug.Log("Live Point : ");
-        Debug.Log(this.livePoint);
-        if( this.livePoint <= 0 ){
-            Destroy(gameObject);        
+        else
+        {
+            // ถ้าอยู่นอกระยะ ให้หยุดเดิน (หรือจะใส่ระบบเดินตรวจการณ์เพิ่มก็ได้)
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
@@ -74,11 +70,33 @@ public class Enemy : MonoBehaviour
         if (isGrounded && shouldJump)
         {
             shouldJump = false;
-            Vector2 direction = (player.position - transform.position).normalized;
-
-            Vector2 jumpDirection = direction * jumpForce;
-
-            rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        StartCoroutine(FlashWhite());
+        if (currentHealth <= 0) Die();
+    }
+
+    private IEnumerator FlashWhite()
+    {
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = ogColor;
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    // วาดวงกลมในหน้า Scene เพื่อให้เราเห็นระยะการมองเห็นของศัตรู
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }

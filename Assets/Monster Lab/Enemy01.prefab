@@ -106,13 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e35fe0e24034e548bd3a4a277c5ad8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  livePoint: 20
-  player: {fileID: 0}
-  chaseSpeed: 2
-  jumpForce: 2
+  chaseSpeed: 1
+  jumpForce: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  maxHealth: 3
 --- !u!50 &4525945527598431294
 Rigidbody2D:
   serializedVersion: 5
