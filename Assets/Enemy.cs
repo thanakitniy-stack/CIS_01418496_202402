@@ -22,6 +22,11 @@ public class Enemy : MonoBehaviour
     private int currentHealth;
     private SpriteRenderer spriteRenderer;
     private Color ogColor;
+    public int damage = 1;
+
+    //LootTable
+    [Header("Loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
 
     void Start()
     {
@@ -90,7 +95,30 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        // วนลูปตรวจสอบรายการไอเทมใน lootTable
+        foreach(LootItem lootItem in lootTable) 
+        {
+            // สุ่มตัวเลข 0-100 ถ้าผลลัพธ์น้อยกว่าหรือเท่ากับโอกาสดรอป ให้ทำการสร้างไอเทม
+            if(Random.Range(0f, 100f) <= lootItem.dropChance)
+            {
+                InstantiateLoot(lootItem.itemPrefab);
+            }
+            break;
+        }
+
         Destroy(gameObject);
+    }
+
+    void InstantiateLoot(GameObject loot)
+    {
+        if(loot)
+        {
+            // สร้างไอเทมขึ้นมาที่ตำแหน่งปัจจุบันของศัตรู
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+
+            // เปลี่ยนสีของไอเทมที่ดรอปให้เป็นสีแดง
+            //droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 
     // วาดวงกลมในหน้า Scene เพื่อให้เราเห็นระยะการมองเห็นของศัตรู

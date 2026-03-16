@@ -106,12 +106,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e35fe0e24034e548bd3a4a277c5ad8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  detectionRange: 6.5
   chaseSpeed: 1
   jumpForce: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
   maxHealth: 3
+  damage: 1
+  lootTable:
+  - itemPrefab: {fileID: 6508461796205607475, guid: d5d2795eac1d23648952c2ec27b461c3, type: 3}
+    dropChance: 40
 --- !u!50 &6992424749852326021
 Rigidbody2D:
   serializedVersion: 5

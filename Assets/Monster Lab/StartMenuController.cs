@@ -3,11 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuController : MonoBehaviour
 {
-    public void OnStartClick()
+    public GameObject startMainMenu;
+    public GameObject levelSelect;
+    public void OnStartClick(string sceneName)
     {
-        SceneManager.LoadScene("lvl1"); // โหลดฉากเกม
+        SceneManager.LoadScene(sceneName); // โหลดฉากเกม
     }
 
+    public void GoToLevelSelect()
+    {
+        startMainMenu.SetActive(false);
+        levelSelect.SetActive(true);
+    }
     public void OnExitClick()
     {
         #if UNITY_EDITOR
