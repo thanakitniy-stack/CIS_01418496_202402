@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Detection Settings")]
-    public float detectionRange = 10f; // ระยะที่ศัตรูจะมองเห็นและเริ่มเดินมาหา
+    public float detectionRange = 10f;
     
     [Header("Movement Settings")]
     private Transform player;
@@ -24,49 +24,72 @@ public class Enemy : MonoBehaviour
     private Color ogColor;
     public int damage = 1;
 
-    //LootTable
     [Header("Loot")]
     public List<LootItem> lootTable = new List<LootItem>();
+
+    [Header("Audio")]
+    public AudioClip aggroSound;   // เสียงร้องตอนเห็นผู้เล่น
+    public AudioClip hitSound;     // เสียงโดนตี
+    public AudioClip deathSound;   // เสียงตาย
+    public float aggroSoundInterval = 4f; // ร้องทุกกี่วินาที
+
+    private AudioSource audioSource;
+    private bool isChasing = false;
+    private float aggroSoundTimer = 0f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // ตรวจสอบว่าในฉากมี Object ที่ใส่ Tag ว่า "Player"
         GameObject playerObj = GameObject.FindWithTag("Player");
         if (playerObj != null) player = playerObj.transform;
         
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         ogColor = spriteRenderer.color;
+
+        // สร้าง AudioSource อัตโนมัติ
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0f; // 0 = 2D, 1 = 3D
     }
 
     void Update()
     {
         if (player == null) return;
 
-        // 1. คำนวณระยะห่างระหว่าง ศัตรู กับ ผู้เล่น
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        // 2. ถ้าผู้เล่นอยู่ในระยะที่กำหนด (detectionRange) ถึงจะเริ่มเดิน
         if (distanceToPlayer <= detectionRange)
         {
             isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
             float direction = Mathf.Sign(player.position.x - transform.position.x);
-            
-            // สั่งให้เดินตาม
             rb.velocity = new Vector2(direction * chaseSpeed, rb.velocity.y);
 
-            // ระบบ AI ตรวจสอบการกระโดด (กำแพง/ทางขาด) ตามรูปภาพที่คุณเคยส่งมา
             RaycastHit2D groundInFront = Physics2D.Raycast(transform.position, new Vector2(direction, 0), 1.5f, groundLayer);
-            if (groundInFront.collider != null) 
+            if (groundInFront.collider != null)
+                shouldJump = true;
+
+            // เสียงร้องตอนไล่ตาม (ร้องซ้ำทุก aggroSoundInterval วินาที)
+            if (!isChasing)
             {
-                shouldJump = true; 
+                isChasing = true;
+                PlaySFX(aggroSound); // ร้องครั้งแรกทันทีที่เห็นผู้เล่น
+                aggroSoundTimer = aggroSoundInterval;
+            }
+            else
+            {
+                aggroSoundTimer -= Time.deltaTime;
+                if (aggroSoundTimer <= 0f)
+                {
+                    PlaySFX(aggroSound);
+                    aggroSoundTimer = aggroSoundInterval;
+                }
             }
         }
         else
         {
-            // ถ้าอยู่นอกระยะ ให้หยุดเดิน (หรือจะใส่ระบบเดินตรวจการณ์เพิ่มก็ได้)
             rb.velocity = new Vector2(0, rb.velocity.y);
+            isChasing = false; // รีเซ็ตเมื่อออกนอกระยะ
         }
     }
 
@@ -82,6 +105,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        PlaySFX(hitSound); // เสียงโดนตี
         StartCoroutine(FlashWhite());
         if (currentHealth <= 0) Die();
     }
@@ -95,14 +119,16 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        // วนลูปตรวจสอบรายการไอเทมใน lootTable
-        foreach(LootItem lootItem in lootTable) 
+        // เล่นเสียงตายก่อน Destroy
+        if (deathSound != null)
         {
-            // สุ่มตัวเลข 0-100 ถ้าผลลัพธ์น้อยกว่าหรือเท่ากับโอกาสดรอป ให้ทำการสร้างไอเทม
-            if(Random.Range(0f, 100f) <= lootItem.dropChance)
-            {
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        }
+
+        foreach (LootItem lootItem in lootTable)
+        {
+            if (Random.Range(0f, 100f) <= lootItem.dropChance)
                 InstantiateLoot(lootItem.itemPrefab);
-            }
             break;
         }
 
@@ -111,17 +137,16 @@ public class Enemy : MonoBehaviour
 
     void InstantiateLoot(GameObject loot)
     {
-        if(loot)
-        {
-            // สร้างไอเทมขึ้นมาที่ตำแหน่งปัจจุบันของศัตรู
-            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
-
-            // เปลี่ยนสีของไอเทมที่ดรอปให้เป็นสีแดง
-            //droppedLoot.GetComponent<SpriteRenderer>().color = Color.red;
-        }
+        if (loot)
+            Instantiate(loot, transform.position, Quaternion.identity);
     }
 
-    // วาดวงกลมในหน้า Scene เพื่อให้เราเห็นระยะการมองเห็นของศัตรู
+    private void PlaySFX(AudioClip clip)
+    {
+        if (clip != null)
+            audioSource.PlayOneShot(clip);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

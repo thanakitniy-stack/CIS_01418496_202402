@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 5f;
     float horizontalMovement;
-    private bool isFacingRight = true; // เช็กว่าหันขวาอยู่ไหม
+    private bool isFacingRight = true;
 
     [Header("Jumping")]
     public float jumpPower = 10f;
@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
     int jumpsRemaining;
 
     [Header("Shooting")]
-    public GameObject bulletPrefab; // ลาก Prefab กระสุนมาใส่
-    public Transform firePoint;     // ลาก Object FirePoint มาใส่
+    public GameObject bulletPrefab;
+    public Transform firePoint;
     public float bulletSpeed = 15f;
 
     [Header("GroundCheck")]
@@ -32,32 +32,59 @@ public class PlayerMovement : MonoBehaviour
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 2f;
 
+    [Header("Audio")]
+    public AudioClip jumpSound;        // เสียงกระโดด
+    public AudioClip shootSound;       // เสียงยิง
+    public AudioClip deathSound;       // เสียงตาย
+    public AudioClip hitSound;         // เสียงโดนดาเมจ
+    public AudioClip bgMusic;          // เสียงพื้นหลัง
+
+    private AudioSource sfxSource;     // สำหรับเสียง Effect
+    private AudioSource bgmSource;     // สำหรับเสียงพื้นหลัง
+
+    private bool isGrounded = false;
+    private bool wasPreviouslyGrounded = false;
+
+    void Awake()
+    {
+        // สร้าง AudioSource สองตัว: หนึ่งสำหรับ SFX หนึ่งสำหรับ BGM
+        sfxSource = gameObject.AddComponent<AudioSource>();
+        sfxSource.playOnAwake = false;
+
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        bgmSource.playOnAwake = false;
+        bgmSource.loop = true;           // BGM วนซ้ำตลอด
+        bgmSource.volume = 0.5f;         // ลดเสียง BGM ให้ไม่กลบ SFX
+
+        // เริ่มเล่น BGM ทันที
+        if (bgMusic != null)
+        {
+            bgmSource.clip = bgMusic;
+            bgmSource.Play();
+        }
+    }
+
     void Update()
     {
         rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
         GroundCheck();
-        Gravity(); 
-        FlipCheck(); // เช็กการหันหน้าทุกเฟรม
+        Gravity();
+        FlipCheck();
     }
 
     private void FlipCheck()
     {
-        // ถ้ากดไปซ้ายแต่หน้าหันขวา หรือ กดไปขวาแต่หน้าหันซ้าย ให้ทำการ Flip
         if (horizontalMovement < 0 && isFacingRight)
-        {
             Flip();
-        }
         else if (horizontalMovement > 0 && !isFacingRight)
-        {
             Flip();
-        }
     }
 
     private void Flip()
     {
         isFacingRight = !isFacingRight;
         Vector3 localScale = transform.localScale;
-        localScale.x *= -1f; // สลับค่า X เป็นบวก/ลบ
+        localScale.x *= -1f;
         transform.localScale = localScale;
     }
 
@@ -66,22 +93,21 @@ public class PlayerMovement : MonoBehaviour
         horizontalMovement = context.ReadValue<Vector2>().x;
     }
 
-    // ฟังก์ชันสำหรับปุ่มยิง (สร้าง Action ใหม่ใน Input System ชื่อ Fire หรือใช้ปุ่มเดิม)
     public void Shoot(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            // สร้างกระสุนที่ตำแหน่ง FirePoint
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
-            // ยิงกระสุนไปตามทิศที่ตัวละครหัน (ใช้ localScale.x หรือทิศทางของตัวละคร)
             float direction = isFacingRight ? 1f : -1f;
             bulletRb.velocity = new Vector2(direction * bulletSpeed, 0);
+
+            // เล่นเสียงยิง
+            PlaySFX(shootSound);
         }
     }
 
-    // --- ส่วนที่เหลือ (Jump, Gravity, GroundCheck) คงเดิมตามโค้ดของคุณ ---
     public void Jump(InputAction.CallbackContext context)
     {
         if (jumpsRemaining > 0)
@@ -90,6 +116,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 jumpsRemaining--;
+
+                // เล่นเสียงกระโดด
+                PlaySFX(jumpSound);
             }
             else if (context.canceled)
             {
@@ -113,15 +142,65 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundCheck()
     {
-        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
+        wasPreviouslyGrounded = isGrounded;
+        isGrounded = Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer);
+
+        if (isGrounded)
         {
             jumpsRemaining = maxJumps;
         }
     }
 
+    // ============================================================
+    // ฟังก์ชัน Public สำหรับเรียกจากสคริปต์อื่น (Health/Enemy)
+    // ============================================================
+
+    /// <summary>
+    /// เรียกเมื่อตัวละครโดนดาเมจ
+    /// </summary>
+    public void OnHit()
+    {
+        PlaySFX(hitSound);
+    }
+    // เพิ่มใน PlayerMovement.cs ต่อจาก OnHit() และ OnDeath()
+    public void OnShoot()
+    {
+    PlaySFX(shootSound);
+    }
+    /// <summary>
+    /// เรียกเมื่อตัวละครตาย
+    /// </summary>
+    public void OnDeath()
+    {
+        PlaySFX(deathSound);
+
+        // หยุด BGM ตอนตาย
+        if (bgmSource.isPlaying)
+            bgmSource.Stop();
+    }
+
+    /// <summary>
+    /// เล่นเสียง BGM ใหม่ (เช่น ตอน Respawn หรือเปลี่ยนด่าน)
+    /// </summary>
+    public void PlayBGM(AudioClip clip = null)
+    {
+        bgmSource.clip = clip != null ? clip : bgMusic;
+        bgmSource.Play();
+    }
+
+    // ============================================================
+    // Helper
+    // ============================================================
+    private void PlaySFX(AudioClip clip)
+    {
+        if (clip != null)
+            sfxSource.PlayOneShot(clip);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
-        if(groundCheckPos != null) Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
+        if (groundCheckPos != null)
+            Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 }
