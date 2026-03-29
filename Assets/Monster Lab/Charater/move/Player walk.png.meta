@@ -69,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -134,12 +134,12 @@ TextureImporter:
       name: Player walk_0
       rect:
         serializedVersion: 2
-        x: 201
-        y: 1059
-        width: 404
-        height: 949
+        x: 202
+        y: 1060
+        width: 402
+        height: 947
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,13 +156,13 @@ TextureImporter:
       name: Player walk_1
       rect:
         serializedVersion: 2
-        x: 762
-        y: 1064
-        width: 589
-        height: 924
+        x: 763
+        y: 1065
+        width: 587
+        height: 922
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 51, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -178,13 +178,13 @@ TextureImporter:
       name: Player walk_2
       rect:
         serializedVersion: 2
-        x: 1436
-        y: 1062
-        width: 612
-        height: 986
+        x: 1437
+        y: 1063
+        width: 611
+        height: 985
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 110, w: 49}
       customData: 
       outline: []
       physicsShape: []
@@ -200,13 +200,13 @@ TextureImporter:
       name: Player walk_3
       rect:
         serializedVersion: 2
-        x: 179
-        y: 51
-        width: 436
-        height: 972
+        x: 180
+        y: 52
+        width: 434
+        height: 970
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 9}
       customData: 
       outline: []
       physicsShape: []
@@ -222,12 +222,12 @@ TextureImporter:
       name: Player walk_4
       rect:
         serializedVersion: 2
-        x: 811
-        y: 61
-        width: 457
-        height: 924
+        x: 812
+        y: 62
+        width: 455
+        height: 922
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: Player walk_5
       rect:
         serializedVersion: 2
-        x: 1428
-        y: 61
-        width: 620
-        height: 932
+        x: 1429
+        y: 62
+        width: 509
+        height: 930
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -266,12 +266,12 @@ TextureImporter:
       name: Player walk_6
       rect:
         serializedVersion: 2
-        x: 245
-        y: 51
-        width: 6
-        height: 6
+        x: 246
+        y: 52
+        width: 4
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -288,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 977c1e1205548d14495817e3bfd1b358
     internalID: 0
     vertices: []
     indices: 
@@ -296,7 +296,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Player walk_0: -2008241071264656992
       Player walk_1: 3074712044074728508
