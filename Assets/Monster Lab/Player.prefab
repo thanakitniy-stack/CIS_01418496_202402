@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 5553907243126686763}
   - component: {fileID: 15623762315487}
   - component: {fileID: 7386401678525185430}
-  - component: {fileID: 9096198135578090062}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -391,25 +390,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   bulletPrefab: {fileID: 2577866721060852298, guid: fbb6805e3dd5a0d4d963ca9421a7c712, type: 3}
   bulletSpeed: 30
---- !u!95 &9096198135578090062
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9063677766560075045}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d1fc9b90d6341f840ab7749ed2cfc3dd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

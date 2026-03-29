@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    private Animator anim;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -23,55 +22,62 @@ public class PlayerMovement : MonoBehaviour
     public Transform firePoint;
     public float bulletSpeed = 15f;
 
-    // 🔥 เพิ่มตรงนี้ (Gun)
-    public Transform gun;
-    private Quaternion gunStartRotation;
-
     [Header("GroundCheck")]
     public Transform groundCheckPos;
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
     public LayerMask groundLayer;
-    private bool isGrounded;
 
     [Header("Gravity")]
     public float baseGravity = 2f;
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 2f;
 
-    void Start()
-    {
-        anim = GetComponent<Animator>();
+    [Header("Audio")]
+    public AudioClip jumpSound;        // เสียงกระโดด
+    public AudioClip shootSound;       // เสียงยิง
+    public AudioClip deathSound;       // เสียงตาย
+    public AudioClip hitSound;         // เสียงโดนดาเมจ
+    public AudioClip bgMusic;          // เสียงพื้นหลัง
 
-        // 🔥 จำตำแหน่งเริ่มต้นปืน
-        if (gun != null)
+    private AudioSource sfxSource;     // สำหรับเสียง Effect
+    private AudioSource bgmSource;     // สำหรับเสียงพื้นหลัง
+
+    private bool isGrounded = false;
+    private bool wasPreviouslyGrounded = false;
+
+    void Awake()
+    {
+        // สร้าง AudioSource สองตัว: หนึ่งสำหรับ SFX หนึ่งสำหรับ BGM
+        sfxSource = gameObject.AddComponent<AudioSource>();
+        sfxSource.playOnAwake = false;
+
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        bgmSource.playOnAwake = false;
+        bgmSource.loop = true;           // BGM วนซ้ำตลอด
+        bgmSource.volume = 0.5f;         // ลดเสียง BGM ให้ไม่กลบ SFX
+
+        // เริ่มเล่น BGM ทันที
+        if (bgMusic != null)
         {
-            gunStartRotation = gun.localRotation;
+            bgmSource.clip = bgMusic;
+            bgmSource.Play();
         }
     }
 
     void Update()
     {
         rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
-
         GroundCheck();
-        Gravity(); 
+        Gravity();
         FlipCheck();
-
-        anim.SetBool("isWalking", horizontalMovement != 0);
-        anim.SetBool("isGrounded", isGrounded);
-        anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
     private void FlipCheck()
     {
         if (horizontalMovement < 0 && isFacingRight)
-        {
             Flip();
-        }
         else if (horizontalMovement > 0 && !isFacingRight)
-        {
             Flip();
-        }
     }
 
     private void Flip()
@@ -91,34 +97,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed)
         {
-            // ยิงกระสุน
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
             float direction = isFacingRight ? 1f : -1f;
             bulletRb.velocity = new Vector2(direction * bulletSpeed, 0);
 
-            anim.SetTrigger("shoot");
-
-            // 🔥 ยกปืน
-            if (gun != null)
-            {
-                StopAllCoroutines();
-                StartCoroutine(GunRecoil());
-            }
+            // เล่นเสียงยิง
+            PlaySFX(shootSound);
         }
-    }
-
-    // 🔥 Animation ปืน (ยกขึ้นแล้วกลับ)
-    IEnumerator GunRecoil()
-    {
-        // ยกปืนขึ้น
-        gun.localRotation = Quaternion.Euler(0, 0, 20f);
-
-        yield return new WaitForSeconds(0.1f);
-
-        // กลับตำแหน่งเดิม
-        gun.localRotation = gunStartRotation;
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -130,7 +117,8 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 jumpsRemaining--;
 
-                anim.SetTrigger("jump");
+                // เล่นเสียงกระโดด
+                PlaySFX(jumpSound);
             }
             else if (context.canceled)
             {
@@ -154,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundCheck()
     {
+        wasPreviouslyGrounded = isGrounded;
         isGrounded = Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer);
 
         if (isGrounded)
@@ -162,9 +151,56 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // ============================================================
+    // ฟังก์ชัน Public สำหรับเรียกจากสคริปต์อื่น (Health/Enemy)
+    // ============================================================
+
+    /// <summary>
+    /// เรียกเมื่อตัวละครโดนดาเมจ
+    /// </summary>
+    public void OnHit()
+    {
+        PlaySFX(hitSound);
+    }
+    // เพิ่มใน PlayerMovement.cs ต่อจาก OnHit() และ OnDeath()
+    public void OnShoot()
+    {
+    PlaySFX(shootSound);
+    }
+    /// <summary>
+    /// เรียกเมื่อตัวละครตาย
+    /// </summary>
+    public void OnDeath()
+    {
+        PlaySFX(deathSound);
+
+        // หยุด BGM ตอนตาย
+        if (bgmSource.isPlaying)
+            bgmSource.Stop();
+    }
+
+    /// <summary>
+    /// เล่นเสียง BGM ใหม่ (เช่น ตอน Respawn หรือเปลี่ยนด่าน)
+    /// </summary>
+    public void PlayBGM(AudioClip clip = null)
+    {
+        bgmSource.clip = clip != null ? clip : bgMusic;
+        bgmSource.Play();
+    }
+
+    // ============================================================
+    // Helper
+    // ============================================================
+    private void PlaySFX(AudioClip clip)
+    {
+        if (clip != null)
+            sfxSource.PlayOneShot(clip);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
-        if (groundCheckPos != null) Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
+        if (groundCheckPos != null)
+            Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 }
