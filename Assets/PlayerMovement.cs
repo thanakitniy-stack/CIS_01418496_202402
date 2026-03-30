@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    Animator anim;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
             bgmSource.clip = bgMusic;
             bgmSource.Play();
         }
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -70,6 +72,8 @@ public class PlayerMovement : MonoBehaviour
         GroundCheck();
         Gravity();
         FlipCheck();
+        // 👇 คุม animation เดิน
+        anim.SetBool("isMoving", Mathf.Abs(horizontalMovement) > 0.1f);
     }
 
     private void FlipCheck()
