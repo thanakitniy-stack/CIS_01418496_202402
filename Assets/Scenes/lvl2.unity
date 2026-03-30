@@ -15256,6 +15256,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1075504703060575258, guid: eb5b9324b27170f4aab0fb618de25249, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a5f21dd85b87afa4fa55b828cd550f91, type: 2}
     - target: {fileID: 373536260033745779, guid: eb5b9324b27170f4aab0fb618de25249, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.99189
@@ -15299,6 +15303,22 @@ PrefabInstance:
     - target: {fileID: 536699689496513423, guid: eb5b9324b27170f4aab0fb618de25249, type: 3}
       propertyPath: m_Name
       value: Enemy04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897568147326320641, guid: eb5b9324b27170f4aab0fb618de25249, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1980555
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897568147326320641, guid: eb5b9324b27170f4aab0fb618de25249, type: 3}
+      propertyPath: m_Size.y
+      value: 0.75731623
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897568147326320641, guid: eb5b9324b27170f4aab0fb618de25249, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.022933125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897568147326320641, guid: eb5b9324b27170f4aab0fb618de25249, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.04961936
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15813,7 +15833,7 @@ Transform:
   m_GameObject: {fileID: 983422036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -51.074142, y: 0.27999544, z: -10}
+  m_LocalPosition: {x: -46.913357, y: 0.27999544, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21359,6 +21379,10 @@ PrefabInstance:
       propertyPath: lootTable.Array.data[0].itemPrefab
       value: 
       objectReference: {fileID: 6508461796205607475, guid: d5d2795eac1d23648952c2ec27b461c3, type: 3}
+    - target: {fileID: 6724379742095081608, guid: c5e2809a07ca761469962ed32be41a73, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d376b1b889ae6394097b2932a7c52ba3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

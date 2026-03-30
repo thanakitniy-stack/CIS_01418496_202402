@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4980514105185699192}
   - component: {fileID: 8003553736105074955}
   - component: {fileID: 5970450691101578019}
+  - component: {fileID: 6724379742095081608}
   m_Layer: 0
   m_Name: Enemy05
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlimeBoss
   detectionRange: 10
+  chaseSpeed: 2
   slimeChildPrefab: {fileID: 1845616815301929964, guid: 7ea40a6985181044cb2e7adf0adc11f7, type: 3}
   maxChildren: 3
   spawnInterval: 3
@@ -189,3 +191,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.6, y: 2.88}
   m_EdgeRadius: 0
+--- !u!95 &6724379742095081608
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238247660760525765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d376b1b889ae6394097b2932a7c52ba3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

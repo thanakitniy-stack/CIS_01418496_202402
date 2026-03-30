@@ -330,6 +330,11 @@ MonoBehaviour:
   baseGravity: 2
   maxFallSpeed: 20
   fallSpeedMultiplier: 2
+  jumpSound: {fileID: 0}
+  shootSound: {fileID: 0}
+  deathSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  bgMusic: {fileID: 0}
 --- !u!61 &15623762315487
 BoxCollider2D:
   m_ObjectHideFlags: 0
