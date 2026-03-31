@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4642889669003565000}
   - component: {fileID: 1410044453961962244}
   - component: {fileID: 9038042053767392430}
+  - component: {fileID: 8756802605198508448}
   m_Layer: 0
   m_Name: Enemy06
   m_TagString: Untagged
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 994307801938122070, guid: c78a3c094e85d1641bd9c1d1cdc8dfb1, type: 3}
+  m_Sprite: {fileID: -5688739654425014672, guid: a58a597294a8e114c95e222c5dfa8ef9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -130,8 +131,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.35, y: 8.32}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.5, y: 0.48}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -166,3 +167,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8756802605198508448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3788526149413523236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acf22ca8964802409b0d14b30c7da1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AcidBoss
+  detectionRange: 12
+  chaseSpeed: 2
+  acidBulletPrefab: {fileID: 4788579704482211359, guid: aa2d802a01b93734aa30eb288091a542, type: 3}
+  shootCooldown: 2
+  shootRange: 8
+  bulletSpeed: 6
+  sprayCooldown: 6
+  sprayRange: 3
+  sprayDamage: 1
+  sprayKnockback: 5
+  maxHealth: 15
+  lootTable: []
+  shootSound: {fileID: 0}
+  spraySound: {fileID: 0}
+  hitSound: {fileID: 0}
+  deathSound: {fileID: 0}

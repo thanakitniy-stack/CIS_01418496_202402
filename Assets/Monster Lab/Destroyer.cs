@@ -176,7 +176,7 @@ public class Destroyer : MonoBehaviour
     isJumping = true;
     PlaySFX(jumpSound);
 
-    yield return StartCoroutine(Squish(0.6f, 1.4f, 0.15f));
+    //yield return StartCoroutine(Squish(0.6f, 1.4f, 0.15f));
 
     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     slamTimer = slamCooldown;
@@ -199,7 +199,7 @@ public class Destroyer : MonoBehaviour
 
     Debug.Log("แตะพื้นแล้ว! Slam!");
     PlaySFX(slamSound);
-    yield return StartCoroutine(Squish(1.5f, 0.5f, 0.1f));
+    //yield return StartCoroutine(Squish(1.5f, 0.5f, 0.1f));
 
     // Slam damage
     float dist = Vector2.Distance(transform.position, player.position);
