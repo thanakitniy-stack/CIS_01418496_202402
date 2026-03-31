@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 5553907243126686763}
   - component: {fileID: 15623762315487}
   - component: {fileID: 7386401678525185430}
+  - component: {fileID: 4015215636633081945}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -395,3 +396,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   bulletPrefab: {fileID: 2577866721060852298, guid: fbb6805e3dd5a0d4d963ca9421a7c712, type: 3}
   bulletSpeed: 30
+--- !u!114 &4015215636633081945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063677766560075045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ba7ded87260b3458a4f3469ad3632b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 3
+  healthUI: {fileID: 0}
