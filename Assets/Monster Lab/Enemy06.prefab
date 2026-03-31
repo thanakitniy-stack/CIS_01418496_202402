@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4642889669003565000}
   - component: {fileID: 1410044453961962244}
   - component: {fileID: 9038042053767392430}
-  - component: {fileID: 4987167833127363626}
   m_Layer: 0
   m_Name: Enemy06
   m_TagString: Untagged
@@ -167,31 +166,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4987167833127363626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3788526149413523236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1acf22ca8964802409b0d14b30c7da1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AcidBoss
-  detectionRange: 12
-  chaseSpeed: 2
-  acidBulletPrefab: {fileID: 4788579704482211359, guid: aa2d802a01b93734aa30eb288091a542, type: 3}
-  shootCooldown: 10
-  shootRange: 8
-  bulletSpeed: 6
-  sprayCooldown: 6
-  sprayRange: 3
-  sprayDamage: 1
-  sprayKnockback: 5
-  maxHealth: 15
-  lootTable: []
-  shootSound: {fileID: 0}
-  spraySound: {fileID: 0}
-  hitSound: {fileID: 0}
-  deathSound: {fileID: 0}

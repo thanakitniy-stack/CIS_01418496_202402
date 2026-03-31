@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "mmmoo.slnx"
+    "dotnet.defaultSolution": "CIS_01418496_202402.slnx"
 }
